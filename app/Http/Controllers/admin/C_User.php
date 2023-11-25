@@ -11,7 +11,7 @@ class C_User extends Controller
 {
     public function __construct(){}
     public function index(){
-        $users =User::paginate(10);
+        $users =User::paginate(20);
         $template = 'admin.users.index';
         return view('admin.master',compact('template','users'));
     }
