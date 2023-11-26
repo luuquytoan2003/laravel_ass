@@ -24,6 +24,9 @@ Route::get('/', function () {
 Route::get('dasboard', [C_Dasboard::class,'index'])->name('dasboard')->middleware(AuthMiddleware::class);
 
 Route::get('user/index', [C_User::class, 'index'])->name('user.index')->middleware(AuthMiddleware::class);
+Route::get('user/create', [C_User::class, 'create'])->name('user.create')->middleware(AuthMiddleware::class);
+
+
 
 Route::get('admin', [C_Auth::class, 'index'] )->name('auth.admin');
 Route::post('login', [C_Auth::class, 'login'])->name('auth.login');

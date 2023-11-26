@@ -15,4 +15,8 @@ class C_User extends Controller
         $template = 'admin.users.index';
         return view('admin.master',compact('template','users'));
     }
+    public function create(){
+        $template = 'admin.users.create';
+        return view('admin.master',compact('template'));
+    }
 }

@@ -1,0 +1,100 @@
+<div class="page-header">
+    <h3 class="page-title"> Quản lí thành viên </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Quản lí thành viên</li>
+            <li class="breadcrumb-item"><a href="#">Thêm thành viên</a></li>
+        </ol>
+    </nav>
+</div>
+
+<form class="forms-sample" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="row">
+        <div class="col-lg-5 mt-4">
+            <h5>Thông tin chung</h5>
+            <p class="text-secondary">- Nhập thông tin người sử dụng</p>
+            <p class="text-secondary">- Lưu ý: Những trường đánh dấu <span class="text-danger">(*)</span> là bắt buộc</p>
+        </div>
+        <div class="col-lg-7 grid-margin stretch-card">
+            <div class="card col">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="exampleInputUsername1">Họ tên <span class="text-danger">(*)</span></label>
+                            <input type="text" class="form-control form-control-sm" id="exampleInputUsername1"
+                                placeholder="Username">
+                        </div>
+                        <div class="form-group col">
+                            <label for="exampleInputEmail1">Email address <span class="text-danger">(*)</span></label>
+                            <input type="email" class="form-control form-control-sm" id="exampleInputEmail1"
+                                placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="exampleInputUsername1">Nhóm thành viên <span class="text-danger">(*)</span></label>
+                            <select class="form-control form-control-sm" name="" id="">
+
+                            </select>
+                        </div>
+                        <div class="form-group col">
+                            <label for="exampleInputEmail1">Ngày sinh <span class="text-danger">(*)</span></label>
+                            <input type="date" class="form-control form-control-sm" id="exampleInputEmail1"
+                                placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="exampleInputPassword1">Password <span class="text-danger">(*)</span></label>
+                            <input type="password" class="form-control form-control-sm" id="exampleInputPassword1"
+                                placeholder="Password">
+                        </div>
+                        <div class="form-group col">
+                            <label for="exampleInputConfirmPassword1">Confirm Password <span class="text-danger">(*)</span></label>
+                            <input type="password" class="form-control form-control-sm"
+                                id="exampleInputConfirmPassword1" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ảnh đại diện </label>
+                        <input type="file" class="form-control form-control-sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 mt-4">
+            <h5>Thông tin liên hệ</h5>
+            <p class="text-secondary">- Nhập thông tin liên hệ người sử dụng</p>
+        </div>
+        <div class="col-lg-7 grid-margin stretch-card">
+            <div class="card col">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="exampleInputUsername1">Số điện thoại <span class="text-danger">(*)</span></label>
+                            <input type="text" class="form-control form-control-sm" id="exampleInputUsername1"
+                                placeholder="Username">
+                        </div>
+                        <div class="form-group col">
+                            <label for="exampleInputEmail1">Địa chỉ <span class="text-danger">(*)</span></label>
+                            <input type="email" class="form-control form-control-sm" id="exampleInputEmail1"
+                                placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Giới thiệu</label>
+                        <textarea name="" class="form-control" id="" cols="30" rows="5"></textarea>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+        <button class="btn btn-light">Cancel</button>
+    </div>
+</form>
