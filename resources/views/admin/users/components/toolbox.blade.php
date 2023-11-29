@@ -21,8 +21,8 @@
                         </div>
                     </div>
                 </div>
-                <select class="form-control " id="exampleFormControlSelect2">
-                    @for ($i = 10; $i <= 50; $i += 10)
+                <select type="submit" class="form-control " id="exampleFormControlSelect2">
+                    @for ($i = 20; $i <= 50; $i += 10)
                         <option>{{ $i }} bản ghi</option>
                     @endfor
                 </select>

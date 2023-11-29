@@ -23,8 +23,17 @@ Route::get('/', function () {
 
 Route::get('dasboard', [C_Dasboard::class,'index'])->name('dasboard')->middleware(AuthMiddleware::class);
 
-Route::get('user/index', [C_User::class, 'index'])->name('user.index')->middleware(AuthMiddleware::class);
-Route::get('user/create', [C_User::class, 'create'])->name('user.create')->middleware(AuthMiddleware::class);
+// user
+Route::prefix('user')->group(function () {
+    Route::get('index', [C_User::class, 'index'])->name('user.index')->middleware(AuthMiddleware::class);
+    Route::get('create', [C_User::class, 'create'])->name('user.create')->middleware(AuthMiddleware::class);
+    Route::post('store',[C_User::class,'store'])->name('user.store')->middleware(AuthMiddleware::class);
+    Route::get('edit/{id}', [C_User::class,'edit'])->name('user.edit')->middleware(AuthMiddleware::class);//hiển thị form sửa
+    Route::post('update/{id}', [C_User::class, 'update'])->name('user.update')->middleware(AuthMiddleware::class);// thực hiện sửa
+    Route::get('delete/{id}', [C_User::class,'destroy'])->name('user.delete')->middleware(AuthMiddleware::class);
+
+});
+
 
 
 
