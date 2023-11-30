@@ -19,6 +19,7 @@
                 <p class="text-secondary">- Lưu ý: Những trường đánh dấu <span class="text-danger">(*)</span> là bắt
                     buộc
                 </p>
+                <img src="{{Storage::url($user->avata)}}" alt="" width="100">
             </div>
             <div class="col-lg-7 grid-margin stretch-card">
                 <div class="card col">

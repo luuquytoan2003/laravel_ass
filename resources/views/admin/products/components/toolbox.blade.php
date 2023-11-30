@@ -8,7 +8,10 @@
             <div class="d-flex">
                 <div class="input-group me-1 ">
                     <select class="form-control" id="exampleFormControlSelect2">
-                        <option value="">Nhóm thành viên</option>
+                        <option value="">Nhóm Danh mục</option>
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="input-group input-group-sm  ">

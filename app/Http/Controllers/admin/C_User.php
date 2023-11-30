@@ -5,7 +5,6 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\userRequest;
 use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -16,15 +15,18 @@ class C_User extends Controller
     public function __construct(){
         $this->user = new User();
     }
+
     public function index(){
         $users = $this->user->where('deleted',0)->paginate(20);
         $template = 'admin.users.index';
         return view('admin.master',compact('template','users'));
     }
+
     public function create(){
         $template = 'admin.users.create';
         return view('admin.master',compact('template'));
     }
+
     public function store(userRequest $request){
         
         $user = $this->user->where('email',$request->input('email'))->first();
@@ -70,9 +72,6 @@ class C_User extends Controller
         // if (isset($useremail)) {
         //     return back()->withErrors(['email' => 'Email đã tồn tại']);
         // }
-        // if ($request->input('password') !== $request->input('confirm_password')) {
-        //     return back()->withErrors(['confirm_password' => 'Hai mật khẩu không khớp']);
-        // }
         if ($request->hasFile('avata')) {
             Storage::delete('/public/'.$user->avata);
             $filename = time() . '_' . $request->file('avata')->getClientOriginalName();
@@ -89,17 +88,14 @@ class C_User extends Controller
             'address' => $request->input('address'),
             'role_id' => $request->input('role_id'),
         ];
-        // try {
-        //     $this->user->updateUser($data,$id);
-        //     return back()->with('success', 'Sửa  thành công');
-        // } catch (\Throwable $th) {
-        //     return back()->with(['errors' => 'thêm thất bại']);
-        // }
-        $this->user->updateUser($data, $id);
-        return back()->with('success', 'Sửa  thành công');
+        try {
+            $this->user->updateUser($data,$id);
+            return back()->with('success', 'Sửa  thành công');
+        } catch (\Throwable $th) {
+            return back()->with(['errors' => 'Sửa thất bại']);
+        }
     }
     public function destroy($id){
-        // Storage::delete('/public/'.$user->avata);
         try{
             $this->user->where('id', $id)->update([
                 'deleted' => '1',
