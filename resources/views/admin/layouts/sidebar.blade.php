@@ -3,7 +3,7 @@
         <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                    <img src="{{ asset('assets/images/faces/face1.jpg') }}" alt="profile">
+                    <img src="{{ asset('admin/assets/images/faces/face1.jpg') }}" alt="profile">
                     <span class="login-status online"></span>
                     <!--change to offline or busy as needed-->
                 </div>
@@ -44,7 +44,7 @@
             <div class="collapse" id="product">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{ route('product.index') }}">Tất cả sản phẩm</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Thêm sản phẩm</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('product.create')}}">Thêm sản phẩm</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('option.index')}}">Thuộc tính</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('category.index') }}">Danh mục</a></li>
                 </ul>

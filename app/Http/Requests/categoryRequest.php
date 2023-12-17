@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Flasher\Laravel\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 class categoryRequest extends FormRequest
@@ -19,7 +20,7 @@ class categoryRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+    public function rules(Request $request): array
     {
         return [
             'name' => 'required',

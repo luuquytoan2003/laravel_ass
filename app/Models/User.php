@@ -37,7 +37,7 @@ class User extends Authenticatable
         $this->create([
             'name'=> $dataInsert['name'],
             'email'=> $dataInsert['email'],
-            'password'=> bcrypt($dataInsert['confirm_password']),
+            'password'=> bcrypt($dataInsert['password']),
             'birthday'=>$dataInsert['birthday'],
             'phone'=> $dataInsert['phone'],
             'address'=> $dataInsert['address'],

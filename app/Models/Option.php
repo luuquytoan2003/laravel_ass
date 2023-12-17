@@ -22,10 +22,11 @@ class Option extends Model
         return $this->hasMany(OptionValue::class);
     }
     public function createOp($data){
-        $this->create([
+        $id = $this->create([
             'name'=>$data['name'],
             'visual'=>$data['visual']
         ]);
+        return $id; // trả về đối tượng vừa đc khởi tạo
     }
     public function updateOp($data,$id){
         $this->where('id',$id)->update([

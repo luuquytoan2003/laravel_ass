@@ -22,4 +22,16 @@ class C_OptionValues extends Controller
         $this->optionValues->createOptionValues($data);
         return redirect()->back()->with('success', 'Thêm mới chủng loại thành công');
     }
+    public function update(Request $request,$id){
+        $data = [
+            'value'=>$request->value,
+            'option_id'=>$request->option_id
+        ];
+        $this->optionValues->updateOptionValues($data,$id);
+        return back()->with('success','Sửa chủng loại thành công');
+    }
+    public function destroy($id){
+        $this->optionValues->where('id',$id)->delete();
+        return back()->with('success', 'Xóa chủng loại thành công');
+    }
 }

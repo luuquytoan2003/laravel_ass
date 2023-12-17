@@ -3,7 +3,7 @@
         <tr>
             <th>#</th>
             <th>
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="checkAll" id="selectAll">
             </th>
             <th> Hình ảnh </th>
             <th> Tên sản phẩm </th>
@@ -15,26 +15,36 @@
     </thead>
     <tbody>
         @if (isset($products))
+
             @foreach ($products as $key => $product)
+                @php
+                    $category = $product->category;
+                @endphp
                 <tr>
                     <td>{{ $key + 1 }}</td>
                     <td>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="itemCheckbox" id="">
                     </td>
-                    <td class="">
-                        {{ $product->image }}
+                    <td class="text-center">
+                        <img src="{{ Storage::url($product->image) }}" alt="" width="">
                     </td>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->phone }}</td>
+                    <td>{{ $product->title }}</td>
+                    <td>{{ $product->category->name }}</td>
                     <td>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        @if (!empty($product) && $product->skus && $product->skus->count() > 0)
+                            {{ min($product->skus->pluck('price')->toArray()) }} -
+                            {{ max($product->skus->pluck('price')->toArray()) }}
+                        @else
+                            N/A
+                        @endif
                     </td>
                     <td>
-                        <a href="{{ route('user.edit', [$product->id]) }}" class="btn btn-inverse-info btn-icon"><button
-                                type="button" class="btn btn-inverse-info btn-icon">
+                        {{ $product->created_at }}
+                    </td>
+                    <td>
+                        <a href="{{ route('product.edit', [$product->id]) }}"
+                            class="btn btn-inverse-info btn-icon"><button type="button"
+                                class="btn btn-inverse-info btn-icon">
                                 <i class="mdi mdi-pencil-box"></i>
                             </button>
                         </a>

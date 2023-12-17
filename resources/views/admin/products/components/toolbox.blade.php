@@ -1,8 +1,8 @@
 <div class="mb-2">
     <div class="row">
         <div class="col">
-            <a href="{{ route('user.create') }}" class="btn btn-inverse-primary btn-sm mb-1 "><i
-                    class="mdi mdi-account-plus"></i>Thêm mới thành viên</a>
+            <a href="{{ route('product.create') }}" class="btn btn-inverse-primary btn-sm mb-1 "><i
+                    class="mdi mdi-account-plus"></i>Thêm mới Sản Phẩm</a>
         </div>
         <div class="col-lg-6 ">
             <div class="d-flex">

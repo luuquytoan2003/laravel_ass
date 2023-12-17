@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Option;
 use App\Models\OptionValue;
+use App\Models\SKU;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -25,7 +26,8 @@ class C_Option extends Controller
             'visual'=>$request->visual
         ];
         try {
-            $this->option->createOp($data);
+            $id =$this->option->createOp($data);
+            //  $this->option->id();
             return back()->with('success','Thêm thuộc tính thành công');
         } catch (\Throwable $th) {
             echo $th->getMessage();

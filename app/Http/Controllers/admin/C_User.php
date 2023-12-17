@@ -5,7 +5,9 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\userRequest;
 use App\Models\User;
+use Illuminate\Hashing\BcryptHasher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -39,7 +41,6 @@ class C_User extends Controller
         if($request->hasFile('avata')){
             $filename = time() . '_' . $request->file('avata')->getClientOriginalName();
             $uploadfile = $request->file('avata')->storeAs('avataUser', $filename,'public');
-
         }
         else{
             $uploadfile = null;
@@ -47,7 +48,7 @@ class C_User extends Controller
         $data = [
             'name'=> $request->input('name'),
             'email'=> $request->input('email'),
-            'confirm_password'=> bcrypt($request->input('confirm_password')),
+            'password'=> $request->input('password'),
             'birthday'=>$request->input('birthday'),
             'avata'=> $uploadfile,
             'phone'=> $request->input('phone'),

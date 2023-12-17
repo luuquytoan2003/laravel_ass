@@ -17,7 +17,7 @@
         <div class="col-md-4 stretch-card grid-margin">
             <div class="card bg-gradient-danger card-img-holder text-white">
                 <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <img src="admin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Weekly Sales <i
                             class="mdi mdi-chart-line mdi-24px float-right"></i>
                     </h4>
@@ -29,7 +29,7 @@
         <div class="col-md-4 stretch-card grid-margin">
             <div class="card bg-gradient-info card-img-holder text-white">
                 <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <img src="admin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Weekly Orders <i
                             class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                     </h4>
@@ -41,7 +41,7 @@
         <div class="col-md-4 stretch-card grid-margin">
             <div class="card bg-gradient-success card-img-holder text-white">
                 <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <img src="admin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Visitors Online <i
                             class="mdi mdi-diamond mdi-24px float-right"></i>
                     </h4>
@@ -93,7 +93,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img src="assets/images/faces/face1.jpg" class="me-2" alt="image"> David
+                                        <img src="admin/assets/images/faces/face1.jpg" class="me-2" alt="image"> David
                                         Grey
                                     </td>
                                     <td> Fund is not recieved </td>
@@ -105,7 +105,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="assets/images/faces/face2.jpg" class="me-2" alt="image"> Stella
+                                        <img src="admin/assets/images/faces/face2.jpg" class="me-2" alt="image"> Stella
                                         Johnson
                                     </td>
                                     <td> High loading time </td>
@@ -117,7 +117,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="assets/images/faces/face3.jpg" class="me-2" alt="image"> Marina
+                                        <img src="admin/assets/images/faces/face3.jpg" class="me-2" alt="image"> Marina
                                         Michel
                                     </td>
                                     <td> Website down for one week </td>
@@ -129,7 +129,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="assets/images/faces/face4.jpg" class="me-2" alt="image"> John Doe
+                                        <img src="admin/assets/images/faces/face4.jpg" class="me-2" alt="image"> John Doe
                                     </td>
                                     <td> Loosing control on server </td>
                                     <td>
@@ -162,18 +162,18 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-6 pe-1">
-                            <img src="assets/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded"
+                            <img src="admin/assets/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded"
                                 alt="image">
-                            <img src="assets/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
+                            <img src="admin/assets/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
                         </div>
                         <div class="col-6 ps-1">
-                            <img src="assets/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded"
+                            <img src="admin/assets/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded"
                                 alt="image">
-                            <img src="assets/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
+                            <img src="admin/assets/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
                         </div>
                     </div>
                     <div class="d-flex mt-5 align-items-top">
-                        <img src="assets/images/faces/face3.jpg" class="img-sm rounded-circle me-3" alt="image">
+                        <img src="admin/assets/images/faces/face3.jpg" class="img-sm rounded-circle me-3" alt="image">
                         <div class="mb-0 flex-grow">
                             <h5 class="me-2 mb-2">School Website - Authentication Module.</h5>
                             <p class="mb-0 font-weight-light">It is a long established fact that a reader will be

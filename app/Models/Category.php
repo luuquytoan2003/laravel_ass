@@ -14,6 +14,10 @@ class Category extends Model
         'name',
         'deleted'
     ];
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
     public function createCate($data){
         $this->create([
             'name' => $data['name'],

@@ -56,13 +56,19 @@ Route::prefix('option')->group(function () {
 
 Route::prefix('option_values')->group(function () {
     Route::post('store', [C_OptionValues::class, 'store'])->name('optionValues.store')->middleware(AuthMiddleware::class);
-    // Route::post('update/{id}', [C_Category::class, 'update'])->name('category.update')->middleware(AuthMiddleware::class);
-    // Route::get('delete/{id}', [C_Category::class, 'destroy'])->name('category.delete')->middleware(AuthMiddleware::class);
+    Route::post('update/{id}', [C_OptionValues::class, 'update'])->name('optionValues.update')->middleware(AuthMiddleware::class);
+    Route::get('delete/{id}', [C_OptionValues::class, 'destroy'])->name('optionValues.delete')->middleware(AuthMiddleware::class);
 });
 
 //product
 Route::prefix('product')->group(function () {
-    Route::get('', [C_Product::class,'index'])->name('product.index')->middleware(AuthMiddleware::class);
+    Route::get('productList', [C_Product::class,'index'])->name('product.index')->middleware(AuthMiddleware::class);
+    Route::get('productCreate', [C_Product::class, 'create'])->name('product.create')->middleware(AuthMiddleware::class);
+    Route::post('store',[C_Product::class, 'store'])->name('product.store')->middleware(AuthMiddleware::class);
+    Route::get('edit/{id}',[C_Product::class,'edit'])->name('product.edit')->middleware(AuthMiddleware::class);
+    Route::post('update/{id}', [C_Product::class, 'update'])->name('product.update')->middleware(AuthMiddleware::class);
+
+
     
 });
 
@@ -72,6 +78,6 @@ Route::prefix('product')->group(function () {
 
 
 
-Route::get('admin', [C_Auth::class, 'index'] )->name('auth.admin');
 Route::post('login', [C_Auth::class, 'login'])->name('auth.login');
 Route::get('logout', [C_Auth::class,'logout'])->name('auth.logout');
+Route::get('backend',[C_Auth::class,'index'])->name('auth.admin');
