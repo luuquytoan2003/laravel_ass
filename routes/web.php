@@ -7,6 +7,8 @@ use App\Http\Controllers\admin\C_Option;
 use App\Http\Controllers\admin\C_OptionValues;
 use App\Http\Controllers\admin\C_Product;
 use App\Http\Controllers\admin\C_User;
+use App\Http\Controllers\client\HomeController;
+use App\Http\Controllers\client\ShopController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AuthMiddleware;
 
@@ -22,7 +24,7 @@ use App\Http\Middleware\AuthMiddleware;
 */
 
 Route::get('/', function () {
-    return view('admin.auth.login');
+    return view('client.pages.home');
 });
 
 Route::get('dasboard', [C_Dasboard::class,'index'])->name('dasboard')->middleware(AuthMiddleware::class);
@@ -67,12 +69,15 @@ Route::prefix('product')->group(function () {
     Route::post('store',[C_Product::class, 'store'])->name('product.store')->middleware(AuthMiddleware::class);
     Route::get('edit/{id}',[C_Product::class,'edit'])->name('product.edit')->middleware(AuthMiddleware::class);
     Route::post('update/{id}', [C_Product::class, 'update'])->name('product.update')->middleware(AuthMiddleware::class);
-
-
-    
 });
 
 //attributes
+
+
+/**CLIENT */
+Route::get('home',[HomeController::class,'index'])->name('client.home');
+Route::get('shop', [ShopController::class, 'index'])->name('client.shop');
+
 
 
 
